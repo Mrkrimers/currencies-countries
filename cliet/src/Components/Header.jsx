@@ -1,12 +1,13 @@
 
+function Header(props) {
 
-function Header() {
+    console.log(props);
     return (
-        <>
+        <div>
             <h1 style={{ textAlign: "center" }}>
-                HI pepple
+                {props.prop}
             </h1>
-        </>
+        </div>
     )
 }
 
