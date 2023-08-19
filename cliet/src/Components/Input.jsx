@@ -9,7 +9,7 @@ function Input({ prop }) {
     //     console.log(res);
     // })
 
-    console.log(prop);
+    // const [lable, setLable] = useState('')
 
     const [age, setAge] = useState('')
 
@@ -17,12 +17,15 @@ function Input({ prop }) {
         setAge(event.target.value)
     }
 
+    const newArr = prop.filter((el) => el.Cur_Name === age)
+
+
     return (
         <div style={{ textAlign: "center" }}>
-            <Header prop={age} />
+            <Header age={age} lable={newArr} />
 
             <FormControl style={{ width: "30%" }}>
-                <InputLabel id="demo-simple-select-label">Country</InputLabel>
+                <InputLabel id="demo-simple-select-label"></InputLabel>
                 <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
@@ -30,7 +33,7 @@ function Input({ prop }) {
                     onChange={handleChange}
                 >
 
-                    {prop.map((el, index) => <MenuItem key={index} value={el.Cur_Name}>{el.Cur_Name}</MenuItem>)}
+                    {prop.map((el, index) => <MenuItem key={index} value={el.Cur_Name}>{el.Cur_Abbreviation}</MenuItem>)}
 
                 </Select>
             </FormControl>

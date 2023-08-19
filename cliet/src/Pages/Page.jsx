@@ -8,11 +8,12 @@ function Page() {
     async function request() {
         const res = await axios.get("https://www.nbrb.by/API/ExRates/Currencies")
         setData(res.data)
+        // console.log(res.data);
     }
 
     useEffect(() => {
         request()
-    });
+    }, []);
 
     // const test = request() // это массив
 
